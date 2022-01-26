@@ -1,1 +1,1 @@
-# rock-paper-scissors
+In this project I will be putting my knowledge of JavaScript to the test. I will create a funcational game of Rock Paper Scissors that I will run in the console.
