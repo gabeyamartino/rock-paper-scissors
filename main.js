@@ -3,39 +3,72 @@ function computerPlay(moves){
 }
 
 let possibleMoves = ["Rock", "Paper", "Scissors"]
-
+let result;
 
 function playRound(playerSelection, computerSelection) {
 
     if (playerSelection === computerSelection) {
-        return "It's a tie!"
+        alert("It's a tie!")
+        result = "tie"
+        
     }  else if (playerSelection == "rock" && computerSelection == "scissors") {
-        return "You win! Rock beats Scissors!"
+        alert("You win! Rock beats Scissors!")
+        result = "player"
     }  else if (playerSelection == "paper" && computerSelection == "rock") {
-        return "Got 'em!! Paper beats Rock!"
+        alert("Got 'em!! Paper beats Rock!")
+        result = "player"
     }  else if (playerSelection == "scissors" && computerSelection == "paper") {
-        return "Scissors beats Paper, so you win this round!"
+        alert("Scissors beats Paper, so you win this round!")
+        result = "player" 
     }  else if (playerSelection == "rock" && computerSelection == "paper") {
-        return "Damn... Paper beats Rock, you lose!"
+        alert("Damn... Paper beats Rock, you lose!")
+        result = "computer"
     }  else if (playerSelection == "paper" && computerSelection == "scissors") {
-        return "The computer wins this round. Scissors beats paper."
+        alert("The computer wins this round. Scissors beats paper.")
+        result = "computer"
     }  else if (playerSelection == "scissors" && computerSelection == "rock") {
-        return "Rock beats scissors. You lose this round."
+        alert("Rock beats scissors. You lose this round.")
+        result = "computer"
+        return result
     }  
 }
 
   let playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
     console.log(playerSelection);
-  const computerSelection = computerPlay(possibleMoves).toLowerCase();
+  let computerSelection = computerPlay(possibleMoves).toLowerCase();
     console.log(computerSelection);
-    console.log(playRound(playerSelection, computerSelection));
 
-function game(rounds) {
 
+function game() {
+    function callPromptFunction(){
+        playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
+    }
+    function callRandomComputer(){
+        computerSelection = computerPlay(possibleMoves).toLowerCase();
+    }
+    for (let i = 1; i <= 5; i++) {
+        playRound(playerSelection, computerSelection);
+        if (result=="player") {
+            playerPoints += 1
+        }  else if (result=="computer") {
+            computerPoints += 1
+        }  else if (result == "tie") {
+            
+        }
+        console.log("Player " + playerPoints)
+        console.log("Computer " + computerPoints)
+        callPromptFunction();
+        callRandomComputer();
+    }
+    if (playerPoints > computerPoints) {
+        alert("Congratulations! You won the game!")
+    } else if (playerPoints< computerPoints) {
+        alert("Uh oh... You lose!!!")
+    } else alert ("It's a tie! Refresh to try again.")
 }
-(playRound(playerSelection, computerSelection);
-(playRound(playerSelection, computerSelection);
-(playRound(playerSelection, computerSelection);
-(playRound(playerSelection, computerSelection);
-(playRound(playerSelection, computerSelection);
-  
+let a = 0;
+let b = 0;
+let playerPoints = 0;
+let computerPoints = 0;
+
+game();
