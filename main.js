@@ -1,16 +1,14 @@
-function computerPlay(moves){
+function computerPlay(){
+    let possibleMoves = ["Rock", "Paper", "Scissors"]
     return possibleMoves[Math.floor(Math.random() * possibleMoves.length)]
 }
 
-let possibleMoves = ["Rock", "Paper", "Scissors"]
 let result;
 
 function playRound(playerSelection, computerSelection) {
-
     if (playerSelection === computerSelection) {
         alert("It's a tie!")
         result = "tie"
-        
     }  else if (playerSelection == "rock" && computerSelection == "scissors") {
         alert("You win! Rock beats Scissors!")
         result = "player"
@@ -33,32 +31,27 @@ function playRound(playerSelection, computerSelection) {
     }  
 }
 
-  let playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
-    console.log(playerSelection);
-  let computerSelection = computerPlay(possibleMoves).toLowerCase();
-    console.log(computerSelection);
-
+  let playerSelection = ("").toLowerCase();
+  let computerSelection = computerPlay().toLowerCase();
 
 function game() {
     function callPromptFunction(){
         playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
     }
     function callRandomComputer(){
-        computerSelection = computerPlay(possibleMoves).toLowerCase();
+        computerSelection = computerPlay().toLowerCase();
     }
     for (let i = 1; i <= 5; i++) {
+        callPromptFunction();
+        callRandomComputer();
         playRound(playerSelection, computerSelection);
         if (result=="player") {
             playerPoints += 1
         }  else if (result=="computer") {
             computerPoints += 1
-        }  else if (result == "tie") {
-            
-        }
-        console.log("Player " + playerPoints)
-        console.log("Computer " + computerPoints)
-        callPromptFunction();
-        callRandomComputer();
+        }  else (result=="tie")
+        console.log("Player: " + playerPoints)
+        console.log("Computer: " + computerPoints)
     }
     if (playerPoints > computerPoints) {
         alert("Congratulations! You won the game!")
@@ -66,8 +59,8 @@ function game() {
         alert("Uh oh... You lose!!!")
     } else alert ("It's a tie! Refresh to try again.")
 }
-let a = 0;
-let b = 0;
+
+
 let playerPoints = 0;
 let computerPoints = 0;
 
