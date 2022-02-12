@@ -21,7 +21,6 @@ function playRound(playerSelection, computerSelection) {
     }  else if (playerSelection == "rock" && computerSelection == "paper") {
         alert("Damn... Paper beats Rock, you lose!")
         result = "computer"
-        
     }  else if (playerSelection == "paper" && computerSelection == "scissors") {
         alert("The computer wins this round. Scissors beats paper.")
         result = "computer"
@@ -34,9 +33,6 @@ function playRound(playerSelection, computerSelection) {
 playerSelection = ("").toLowerCase();
 computerSelection = computerPlay().toLowerCase();
 }
-
-
-
 
 function game() {
 
