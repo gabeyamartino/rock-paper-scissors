@@ -21,6 +21,7 @@ function playRound(playerSelection, computerSelection) {
     }  else if (playerSelection == "rock" && computerSelection == "paper") {
         alert("Damn... Paper beats Rock, you lose!")
         result = "computer"
+        
     }  else if (playerSelection == "paper" && computerSelection == "scissors") {
         alert("The computer wins this round. Scissors beats paper.")
         result = "computer"
@@ -28,13 +29,20 @@ function playRound(playerSelection, computerSelection) {
         alert("Rock beats scissors. You lose this round.")
         result = "computer"
         return result
-    }  
+    }
+
+playerSelection = ("").toLowerCase();
+computerSelection = computerPlay().toLowerCase();
 }
 
-  let playerSelection = ("").toLowerCase();
-  let computerSelection = computerPlay().toLowerCase();
+
+
 
 function game() {
+
+  let playerPoints = 0;
+  let computerPoints = 0;
+
     function callPromptFunction(){
         playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
     }
@@ -45,11 +53,11 @@ function game() {
         callPromptFunction();
         callRandomComputer();
         playRound(playerSelection, computerSelection);
-        if (result=="player") {
+        if (result==="player") {
             playerPoints += 1
-        }  else if (result=="computer") {
+        }  else if (result==="computer") {
             computerPoints += 1
-        }  else (result=="tie")
+        }  else (result==="tie")
         console.log("Player: " + playerPoints)
         console.log("Computer: " + computerPoints)
     }
@@ -59,9 +67,5 @@ function game() {
         alert("Uh oh... You lose!!!")
     } else alert ("It's a tie! Refresh to try again.")
 }
-
-
-let playerPoints = 0;
-let computerPoints = 0;
 
 game();
