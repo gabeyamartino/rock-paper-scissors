@@ -1,0 +1,16 @@
+#page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 40px;
+    font-size: 60px;
+}
+
+.threeButtons {
+    text-align: center;
+}
