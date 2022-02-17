@@ -76,22 +76,12 @@ computerPoints = 0;
 let result;
 
 const outcome = document.querySelector('.score');
-outcome.style.background = ('pink');
-outcome.style.borderStyle = ('solid');
-outcome.style.borderWidth = ('2px');
-outcome.style.borderColor = ('black');
-
 const results = document.querySelector('.result');
-results.style.background = ('blue');
-results.style.borderStyle = ('solid');
-results.style.borderWidth = ('2px');
-
 document.body.appendChild(outcome);
-
 const endgame = document.querySelector('.end');
-endgame.style.borderStyle = ('solid');
-endgame.style.borderWidth = ('2px');
 document.body.appendChild(endgame);
+outcome.textContent = "Player: " + playerPoints + "\nComputer: " + computerPoints;
+
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -133,6 +123,7 @@ buttons.forEach((button) => {
                 computerPoints += 1
             }  else (result==="tie");
             outcome.textContent = "Player: " + playerPoints + "\nComputer: " + computerPoints;
+
 
             if (playerPoints === 5) {
                 endgame.textContent = ("Congratulations! You won the game! Please refresh the page to play again.");

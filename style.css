@@ -1,16 +1,54 @@
+body {
+    background-color: lightblue;
+}
+
 #page {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
+    justify-content: space-evenly;
+    flex: 1;
 }
 
 h1 {
     text-align: center;
-    padding-bottom: 40px;
+    padding: 40px;
     font-size: 60px;
+    font-family: 'Trebuchet MS';
+
 }
 
 .threeButtons {
     text-align: center;
+    padding: 10px;
+}
+
+button {
+    padding: 10px;
+    margin: 20px;
+    width: 100px;
+    height: 75px;
+    font-family: 'Trebuchet MS';
+    font-size: 24px;
+    text-align: center;
+    border-radius: 12px;
+    border-width: 4px;
+}
+
+.result {
+    text-align: center;
+    font-family: 'Trebuchet MS';
+    font-size: 24px;
+}
+
+.score {
+    text-align: center;
+    font-family: 'Trebuchet MS';
+    font-size: 36px;
+}
+
+.end {
+    text-align: center;
+    font-family: 'Trebuchet MS';
+    font-size: 36px;
+    margin-top: 80px;
 }
